@@ -7,6 +7,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, './dist')
   },
+  mode:"development",
   module: {
     rules: [{
       test: /\.js?$/,
@@ -22,12 +23,11 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname,"./dist"),//本地服务器所加载的页面所在的目录
-    historyApiFallback: true,//不跳转
-    inline: true,//实时刷新
-    port: "9527"
+    // historyApiFallback: true,//不跳转
+    // inline: true,//实时刷新
+    port: "9527",
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management',
       template: "./index.html"
